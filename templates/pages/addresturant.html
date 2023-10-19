@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Resturant </title>
+    <style>
+        img {
+            width: 100px;
+            border-radius: 0px;
+            float: none;
+            margin-right: 10px;
+        }
+
+        p.class1 {
+            font-weight: none;
+
+        }
+
+        p.class2 {
+            font-weight: bold;
+        }
+
+        .class3 {
+            width: 700px; /* Set the desired width for the input field */
+            font-size: 16px; /* Set the desired font size for the text inside the input field */
+        }
+    </style>
+</head>
+
+<body>
+    <img src="pizzalogo.png" alt="SliceNYC Logo">
+    <h1>Add a Resturant</h1>
+    <form action="/submitnewrestaurant" method="POST">
+        <div>
+            <label for="name">Resturant Name:</label>
+            <input type="text" id="name" name="restid" placeholder="Pizza place" required>
+        </div>
+        <br>
+        <div>
+            <label for="ad1">Address Line 1:</label>
+            <input type="text" id="ad1" name="ad1" placeholder="19 Barrett Hill Rd" required>
+        </div>
+        <br>
+        <label for="borough">Choose a borough:</label> 
+    <select name="bourough" id="borough"> 
+        <option value="manhattan">Manhattan</option> 
+        <option value="brooklyn">Brooklyn</option> 
+        <option value="queens">Queens</option> 
+        <option value="bronx">Bronx</option>
+        <option value="statenisland">Staten Island</option> 
+    </select>
+        <br>
+        <br>
+        <div>
+            <label for="zip">ZIP Code:</label>
+            <input type="text" id="zip" name="zip" placeholder="12533" required>
+        </div>
+
+        <br>
+        <br>
+        <div>
+            <label for="desc">Resturant Description:</label>
+            <input class="class3" type="text" id="desc" name="desc" placeholder="Wow this restaurant is so cool you should visit there ASAP" required>
+        </div>
+        <br>
+        <label for="cost">Cost:</label>
+        <select name="cost" id="cost"> 
+            <option value="low">$</option> 
+            <option value="medium">$$</option> 
+            <option value="high">$$$</option>
+        </select>
+        <br>
+        <br>
+        <div>
+            <label for="sundayhours">Sunday Hours:</label>
+            <input type="text" id="sundayhours" name="sundayhours" placeholder="9:00AM-5:00PM" required>
+        </div>
+        <br>
+        <div>
+            <label for="mondayhours">Monday Hours:</label>
+            <input type="text" id="mondayhours" name="mondayhours" placeholder="9:00AM-5:00PM" required>
+        </div>
+        <br>
+        <div>
+            <label for="tuesdayhours">Tuesday Hours:</label>
+            <input type="text" id="tuesdayhours" name="tuesdayhours" placeholder="9:00AM-5:00PM" required>
+        </div>
+        <br>
+        <div>
+            <label for="wednesdayhours">Wednesday Hours:</label>
+            <input type="text" id="wednesdayhours" name="wednesdayhours" placeholder="9:00AM-5:00PM" required>
+        </div>
+        <br>
+        <div>
+            <label for="thursdayhours">Thursday Hours:</label>
+            <input type="text" id="thursdayhours" name="thursdayhours" placeholder="9:00AM-5:00PM" required>
+        </div>
+        <br>
+        <div>
+            <label for="fridayhours">Friday Hours:</label>
+            <input type="text" id="fridayhours" name="fridayhours" placeholder="9:00AM-5:00PM" required>
+        </div>
+        <br>
+        <div>
+            <label for="saturdayhours">Saturday Hours:</label>
+            <input type="text" id="saturdayhours" name="saturdayhours" placeholder="9:00AM-5:00PM" required>
+        </div>
+        <br>
+
+        <div>
+            <br>
+                <label for="file">Photo:</label>
+                <input type="file" id="myFile" name="filename">
+            </div>
+
+        <br>
+        <br>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+        <br>
+            
+        
+    </form>
+
+</body>
+
+</html>

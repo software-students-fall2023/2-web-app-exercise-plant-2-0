@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete a Resturant </title>
+    <style>
+        img {
+            width: 100px;
+            border-radius: 0px;
+            float: none;
+            margin-right: 10px;
+        }
+
+        p.class1 {
+            font-weight: none;
+
+        }
+
+        p.class2 {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="pizzalogo.png" alt="SliceNYC Logo">
+    <h1>Delete a Resturant</h1>
+    <form action="/deleterestaurant" method="POST">
+        <div>
+            <label for="adminid">Admin Code:</label>
+            <input type="password" id="adminid" name="adminid" placeholder="7563062548" required>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Delete Restaurant</button>
+        </div>
+        <br>
+        <div>
+            <input type="reset">
+        </div>
+    </form>
+    <p class="class1">Only admins may delete resturants. To delete a resturant, please enter the Resturant ID and Admin
+        Code in the forms above.</p>
+        <p>Don't know the Restaurant ID? Search for it <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">here</a>.</p>
+</body>
+
+</html>
