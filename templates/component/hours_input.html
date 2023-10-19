@@ -1,0 +1,8 @@
+{% macro hours_input(label) %}
+
+<div class="form-group">
+  <label>{{ label }}</label>
+  <input type="text" name="{{ label|lower }}"> 
+</div>
+
+{% endmacro %}
