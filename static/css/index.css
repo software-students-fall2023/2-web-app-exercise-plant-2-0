@@ -1,0 +1,26 @@
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Primary button */
+  .btn-primary {
+    background: #007bff; 
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background: #0062cc;
+  } 
+  
+  /* Form container */
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+  }
