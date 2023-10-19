@@ -1,0 +1,10 @@
+{% macro form(action, method='POST') %}
+
+<form method="{{ method }}" action="{{ action }}">
+
+  {% block form_content %}
+  {% endblock %}
+
+</form>
+
+{% endmacro %}
