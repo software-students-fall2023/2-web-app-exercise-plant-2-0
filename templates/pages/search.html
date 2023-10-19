@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+    <link rel="stylesheet" type="text/css" href="searchStyles.css">
+</head>
+<body>
+    <h1>Search</h1>
+    <div>
+        <label>Search by:</label>
+        <input type="radio" id="searchByName" name="searchType" value="name" checked>
+        <label for="searchByName">Name</label>
+        <input type="radio" id="searchByBorough" name="searchType" value="borough">
+        <label for="searchByBorough">Borough</label>
+    </div>
+
+    <form action="/search" method="post" id="searchForm">
+        <label for="searchQuery">Search:</label>
+        <input type="text" id="searchQuery" name="query" placeholder="Enter restaurant or location" required>
+        <input type="submit" value="Search">
+    </form>
+    
+    <h2>Results</h2>
+    <div class="flex-item">
+        <label for="sortResults">Sort by:</label>
+        <select id="sortResults" name="sortType">
+            <option value="newest">Newest</option>
+            <option value="rank">By Rank</option>
+        </select>
+    </div>
+    
+    <div id="searchResults">
+        <!-- Results will be displayed here -->
+    </div>
+    
+</body>
+</html>
