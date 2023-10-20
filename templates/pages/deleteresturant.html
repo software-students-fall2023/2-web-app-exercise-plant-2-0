@@ -27,7 +27,11 @@
 <body>
     <img src="pizzalogo.png" alt="SliceNYC Logo">
     <h1>Delete a Resturant</h1>
-    <form action="/deleterestaurant" method="POST">
+    <form action="/delete" method="POST">
+        <div>
+            <label for="restaurant ID">Restaurant ID:</label>
+            <input name="restaurantID">
+        </div>
         <div>
             <label for="adminid">Admin Code:</label>
             <input type="password" id="adminid" name="adminid" placeholder="7563062548" required>
