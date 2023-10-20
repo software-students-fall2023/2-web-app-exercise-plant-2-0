@@ -7,22 +7,22 @@ To run this:
 run
 
 Step 1:
-$python3 -m venv .venv
+`$python3 -m venv .venv`
 
 Step 2:
 Activate the virtual environment named .venv…
 
 on Mac:
-$source .venv/bin/activate
+`$source .venv/bin/activate`
 on Windows:
-$.venv\Scripts\activate.bat
+`$.venv\Scripts\activate.bat`
 
 Step 3:
 $pip install -r requirements.txt
 
 Step 4:
-$cd backend
-$python main.py
+`$cd backend`
+`$python main.py`
 
 Step 5:
 Load up 
