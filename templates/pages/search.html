@@ -30,7 +30,12 @@
     </div>
     
     <div id="searchResults">
-        <!-- Results will be displayed here -->
+        {% for result in results %}
+            <h2>{{ result.name }}</h2>
+            <img src="{{ result.img }}" alt="{{ result.name }} Image" width="300" height="200">
+            <p>{{ result.description }}</p>
+            <p>{{ result.location }}</p>
+        {% endfor %}
     </div>
     
 </body>
