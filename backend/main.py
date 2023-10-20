@@ -75,7 +75,7 @@ def delete_restaurant():
         else:
             return "Access denied. Admin code is incorrect."
 
-    return render_template('pages/deleteresturant.html')
+    return render_template('pages/deleterestaurant.html')
 
 
 @app.route('/edit', methods=['GET', 'POST'])
