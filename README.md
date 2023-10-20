@@ -22,7 +22,7 @@ $pip install -r requirements.txt
 
 Step 4:
 `$cd backend`
-`$python main.py`
+`$python3 main.py`
 
 Step 5:
 Load up 
