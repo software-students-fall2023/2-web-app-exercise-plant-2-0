@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Restaurants</title>
+</head>
+<body>
+    <h1>List of Restaurants</h1>
+
+    <a href="/"> Home | </a>
+    <a href="/add"> Add a Restaurant | </a>
+    <a href="/edit"> Edit a Restaurant | </a>
+    <a href="/delete"> Delete a Restaurant (ADMIN) </a>
+
+    <form method="GET" action="/search">
+        <label for="search">Search by Restaurant Name:</label>
+        <input type="text" name="search" id="search" placeholder="Enter restaurant name">
+        <button type="submit">Search</button>
+    </form>
+
+    <form method="GET">
+        <label for="borough">Filter by Borough:</label>
+        <select name="borough" id="borough">
+            <option value="manhattan">Manhattan</option>
+            <option value="brooklyn">Brooklyn</option>
+            <option value="queens">Queens</option>
+            <option value="bronx">Bronx</option>
+            <option value="statenisland">Staten Island</option>
+            <option value="all">All</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
+    <ul>
+        {% for restaurant in restaurants %}
+            {% if restaurant.borough == selected_borough or selected_borough == 'all' %}
+                <li>
+                    <strong>{{ restaurant.restaurant_name }}</strong><br>
+                    Address: {{ restaurant.address_line1 }}, {{ restaurant.borough }}, {{ restaurant.zip_code }}<br>
+                    Description: {{ restaurant.description }}<br>
+                    Cost: {{ restaurant.cost }}<br>
+                    Hours:
+                    <ul>
+                        <li>Sunday: {{ restaurant.sunday_hours }}</li>
+                        <li>Monday: {{ restaurant.monday_hours }}</li>
+                        <li>Tuesday: {{ restaurant.tuesday_hours }}</li>
+                        <li>Wednesday: {{ restaurant.wednesday_hours }}</li>
+                        <li>Thursday: {{ restaurant.thursday_hours }}</li>
+                        <li>Friday: {{ restaurant.friday_hours }}</li>
+                        <li>Saturday: {{ restaurant.saturday_hours }}</li>
+                    </ul>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>

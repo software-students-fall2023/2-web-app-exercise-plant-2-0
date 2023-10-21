@@ -1,0 +1,40 @@
+
+{% from 'components/form.html' import form %}
+{% from 'components/inputs.html' import text_input %}
+{% from 'components/submit.html' import submit_button %}
+{% from 'components/hours_input.html' import hours_input %}
+
+<!-- I tried to make the add.html page but it is not tested because we don't have backend yet- feel free to edit it around -->
+
+{% block content %}
+
+{{ form(action='add') }}
+
+  {% block form_content %}
+
+    {{ text_input('Borough') }}
+
+    {{ text_input('Zip Code') }}
+
+    {{ text_input('Address Line 1') }}
+
+    {{ text_input('Phone Number') }}
+
+    {{ text_input('Name') }}
+
+    
+    {{ hours_input('Sunday') }}
+    {{ hours_input('Monday') }}
+    {{ hours_input('Tuesday') }}
+    {{ hours_input('Wednesday') }}
+    {{ hours_input('Thursday') }}
+    {{ hours_input('Friday') }}
+    {{ hours_input('Saturday') }}
+
+    {{ textarea('Description') }} 
+
+    {{ submit_button('Submit') }}
+
+  {% endblock %}
+
+{% endblock %}

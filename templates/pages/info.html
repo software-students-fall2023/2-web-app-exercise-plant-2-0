@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NYC Pizza</title>
+    <!-- Add your CSS styles here -->
+    <style>
+        /* Add your CSS styles for formatting the page */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+        }
+
+        .restaurant-image {
+            max-width: 100%;
+        }
+
+        .restaurant-description {
+            margin: 20px;
+        }
+
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <h1>NYC Pizza</h1>
+    <!-- Restaurant Image -->
+    <img class="restaurant-image" src="restaurant_image_url.jpg" alt="NYC Pizza Restaurant">
+
+    <!-- Restaurant Description -->
+    <div class="restaurant-description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla hendrerit nunc, in lacinia mi dignissim nec.</p>
+    </div>
+
+    <!-- Opening Hours -->
+    <div class="opening-hours">
+        <p>Opening Hours:</p>
+        <p>Monday: 10:00 AM - 9:00 PM</p>
+        <p>Tuesday: 10:00 AM - 9:00 PM</p>
+        <p>...</p>
+        <!-- Add more days and hours as needed -->
+    </div>
+    
+    <div class="tel">
+        <p>Tel: 201-985-8888</p>
+    </div>
+    
+    <div class="price-range">
+        <p>Price range: $$$</p>
+    </div>
+    
+    <div class="buttons">
+        <button class="button" id="thumbsUp">Thumbs Up <span id="thumbsUpCount">310</span></button>
+        <button class="button" id="thumbsDown">Thumbs Down <span id="thumbsDownCount">21</span></button>
+    </div>
+
+    <!-- JavaScript to update the button counts -->
+    <script>
+        // Sample counts (you can replace these with actual counts from your data)
+        let thumbsUpCount = 310;
+        let thumbsDownCount = 21;
+
+        // Update the counts in the button labels
+        document.getElementById('thumbsUpCount').textContent = thumbsUpCount;
+        document.getElementById('thumbsDownCount').textContent = thumbsDownCount;
+    </script>
+    
+</body>
+</html>

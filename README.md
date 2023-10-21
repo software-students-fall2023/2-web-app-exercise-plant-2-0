@@ -1,15 +1,34 @@
-# Web Application Exercise
+# 2-web-app-exercise-plant-2-0
+2-web-app-exercise-plant-2-0 created by GitHub Classroom
 
-A little exercise to build a web application following an agile development process. See the [instructions](instructions.md) for more detail.
 
-## Product vision statement
+To run this:
 
-See instructions. Delete this line and place the Product Vision Statement here.
+run
 
-## User stories
+Step 1:
+`$python3 -m venv .venv`
 
-See instructions. Delete this line and place a link to the user stories here.
+Step 2:
+Activate the virtual environment named .venv…
 
-## Task boards
+on Mac:
+`$source .venv/bin/activate`
+on Windows:
+`$.venv\Scripts\activate.bat`
 
-See instructions. Delete this line and place a link to the task boards here.
+Step 3:
+$pip install -r requirements.txt
+
+Step 4:
+`$cd backend`
+`$python3 main.py`
+
+Step 5:
+Load up 
+http://127.0.0.1:5000/
+
+and play around with 
+/add
+/edit
+/delete
