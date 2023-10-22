@@ -138,7 +138,7 @@ def search_restaurants():
     restaurants = list(collection.find(query))
     print("*****  ", restaurants)
     # Render an HTML template to display the list of restaurants
-    return render_template('pages/home.html', restaurants=restaurants, selected_borough='all', selected_name=selected_name)
+    return render_template('pages/search.html', restaurants=restaurants, selected_borough='all', selected_name=selected_name)
 
 if __name__ == '__main__':
     app.run(debug=True)
