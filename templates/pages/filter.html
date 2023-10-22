@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Restaurants </title>
+    <style>
+        img {
+            width: 100px;
+            border-radius: 0px;
+            float: none;
+            margin-right: 10px;
+        }
+
+  
+    </style>
+</head>
+
+<body>
+    <img src="pizzalogo.png" alt="SliceNYC Logo">
+    <a href="/"> Home | </a>
+    <a href="/add"> Add a Restaurant | </a>
+    <a href="/edit"> Edit a Restaurant | </a>
+    <a href="/filter"> Filter Restaurants |</a>   
+    <a href="/delete"> Delete a Restaurant (ADMIN) </a>
+   <h1>Filter Restaurants</h1>
+   <h2>By Borough</h2>
+   <div></div>
+    <form action="/filter" method="POST">
+
+        <label for="borough">Select Borough:</label> 
+    <select name="borough" id="borough">
+        <option value="all">All</option> 
+        <option value="manhattan">Manhattan</option> 
+        <option value="brooklyn">Brooklyn</option> 
+        <option value="queens">Queens</option> 
+        <option value="bronx">Bronx</option>
+        <option value="statenisland">Staten Island</option> 
+    </select>
+
+ 
+        <h2>By Cost</h2>
+
+        <label for="cost">Select Cost:</label> 
+        <select name="cost" id="cost">
+            <option value="all">All</option> 
+            <option value="low">Low</option> 
+            <option value="medium">Medium</option> 
+            <option value="high">High</option> 
+        </select>
+        <br>
+        
+        <br>
+        <div>
+            <button type="submit">Filter</button>
+        </div>
+        <br>
+            
+        
+    </form>
+
+</body>
+
+</html>
+
+
+
+</body>
+
+</html>

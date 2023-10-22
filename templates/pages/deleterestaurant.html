@@ -29,15 +29,17 @@
     <a href="/"> Home | </a>
     <a href="/add"> Add a Restaurant | </a>
     <a href="/edit"> Edit a Restaurant | </a>
+    <a href="/filter"> Filter Restaurants |</a>   
     <a href="/delete"> Delete a Restaurant (ADMIN) </a>
 
 
     <h1>Delete a Resturant</h1>
     <form action="/delete" method="POST">
         <div>
-            <label for="restaurant ID">Restaurant ID:</label>
-            <input name="restaurantID">
+            <label for="name">Restaurant Name:</label>
+            <input type="text" id="name" name="name" placeholder="Bobby's Restaurant" required>
         </div>
+        <br>
         <div>
             <label for="adminid">Admin Code:</label>
             <input type="password" id="adminid" name="adminid" placeholder="7563062548" required>
@@ -51,9 +53,9 @@
             <input type="reset">
         </div>
     </form>
-    <p class="class1">Only admins may delete resturants. To delete a resturant, please enter the Resturant ID and Admin
+    <p class="class1">Only admins may delete resturants. To delete a resturant, please enter the restaurant name and Admin
         Code in the forms above.</p>
-        <p>Don't know the Restaurant ID? Search for it <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">here</a>.</p>
+        
 </body>
 
 </html>
