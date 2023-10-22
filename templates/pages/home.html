@@ -10,6 +10,7 @@
     <a href="/add"> Add a Restaurant | </a>
     <a href="/edit"> Edit a Restaurant | </a>
     <a href="/filter"> Filter Restaurants |</a>   
+    <a href="/search"> Search a Restaurant</a>
     <a href="/delete"> Delete a Restaurant (ADMIN) </a>
 
     <!-- <form method="GET" action="/search">
@@ -31,7 +32,7 @@
         <button type="submit">Filter</button>
     </form> -->
 
-    <!-- <ul>
+    <ul>
         {% for restaurant in restaurants %}
         <p> Filtering by {{selected_borough}} </p>
             {% if restaurant.borough == selected_borough or selected_borough == 'all' %}
@@ -53,6 +54,6 @@
                 </li>
             {% endif %}
         {% endfor %}
-    </ul> -->
+    </ul>
 </body>
 </html>
