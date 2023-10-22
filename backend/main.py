@@ -128,7 +128,6 @@ def show_all():
     selected_borough = request.args.get('borough', 'all').lower()
 
     # Render an HTML template to display the list of restaurants
-    print("*** selected ", selected_borough)
     return render_template('pages/home.html', restaurants=restaurants, selected_borough=selected_borough)
 
 @app.route('/search', methods=['GET'])
@@ -141,6 +140,15 @@ def search_restaurants():
     restaurants = list(collection.find(query))
     # Render an HTML template to display the list of restaurants
     return render_template('pages/search.html', restaurants=restaurants, selected_borough='all', selected_name=selected_name)
+
+@app.route('/filter', methods=['GET'])
+def filter():
+    # # Get the search term from the form
+    restaurants = list(collection.find({}))
+    selected_borough = request.args.get('borough', 'all').lower()
+    selected_cost = request.args.get('cost', 'all')
+    return render_template('pages/filter.html', restaurants=restaurants, selected_borough=selected_borough, selected_cost=selected_cost)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

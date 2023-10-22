@@ -12,60 +12,64 @@
             float: none;
             margin-right: 10px;
         }
-
-  
     </style>
 </head>
 
 <body>
-    <img src="pizzalogo.png" alt="SliceNYC Logo">
+    <h1>List of Restaurants</h1>
+
     <a href="/"> Home | </a>
     <a href="/add"> Add a Restaurant | </a>
     <a href="/edit"> Edit a Restaurant | </a>
     <a href="/filter"> Filter Restaurants |</a>   
     <a href="/delete"> Delete a Restaurant (ADMIN) </a>
-   <h1>Filter Restaurants</h1>
-   <h2>By Borough</h2>
-   <div></div>
-    <form action="/filter" method="POST">
 
-        <label for="borough">Select Borough:</label> 
-    <select name="borough" id="borough">
-        <option value="all">All</option> 
-        <option value="manhattan">Manhattan</option> 
-        <option value="brooklyn">Brooklyn</option> 
-        <option value="queens">Queens</option> 
-        <option value="bronx">Bronx</option>
-        <option value="statenisland">Staten Island</option> 
-    </select>
 
- 
-        <h2>By Cost</h2>
-
-        <label for="cost">Select Cost:</label> 
+    <form method="GET">
+        <label for="borough">Filter by Borough:</label>
+        <select name="borough" id="borough">
+            <option value="manhattan" {% if selected_borough == 'manhattan' %}selected{% endif %}>Manhattan</option>
+            <option value="brooklyn" {% if selected_borough == 'brooklyn' %}selected{% endif %}>Brooklyn</option>
+            <option value="queens" {% if selected_borough == 'queens' %}selected{% endif %}>Queens</option>
+            <option value="bronx" {% if selected_borough == 'bronx' %}selected{% endif %}>Bronx</option>
+            <option value="statenisland" {% if selected_borough == 'statenisland' %}selected{% endif %}>Staten Island</option>
+            <option value="all" {% if selected_borough == 'all' %}selected{% endif %}>All</option>
+        </select>
+        <label for="cost">Filter by Cost:</label>
         <select name="cost" id="cost">
             <option value="all">All</option> 
             <option value="low">Low</option> 
             <option value="medium">Medium</option> 
             <option value="high">High</option> 
         </select>
-        <br>
-        
-        <br>
-        <div>
-            <button type="submit">Filter</button>
-        </div>
-        <br>
-            
-        
+        <button type="submit">Filter</button>
     </form>
 
-</body>
+    <ul>
+        {% for restaurant in restaurants %}
+        <p> Filtering by borough: {{selected_borough}} </p>
+        <p> Filtering by cost: {{selected_cost}} </p>
 
-</html>
-
-
-
+         {% if (restaurant.borough == selected_borough or selected_borough == 'all') and (restaurant.cost == selected_cost or selected_cost == 'all') %}
+                <li>
+                    <strong>{{ restaurant.restaurant_name }}</strong><br>
+                    Address: {{ restaurant.address_line1 }}, {{ restaurant.borough }}, {{ restaurant.zip }}<br>
+                    Description: {{ restaurant.description }}<br>
+                    Cost: {{ restaurant.cost }}<br>
+                    Hours:
+                    <ul>
+                        <li>Sunday: {{ restaurant.sunday_hours }}</li>
+                        <li>Monday: {{ restaurant.monday_hours }}</li>
+                        <li>Tuesday: {{ restaurant.tuesday_hours }}</li>
+                        <li>Wednesday: {{ restaurant.wednesday_hours }}</li>
+                        <li>Thursday: {{ restaurant.thursday_hours }}</li>
+                        <li>Friday: {{ restaurant.friday_hours }}</li>
+                        <li>Saturday: {{ restaurant.saturday_hours }}</li>
+                    </ul>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
