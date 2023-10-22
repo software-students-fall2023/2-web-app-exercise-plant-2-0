@@ -21,22 +21,23 @@
     <form method="GET">
         <label for="borough">Filter by Borough:</label>
         <select name="borough" id="borough">
-            <option value="manhattan">Manhattan</option>
-            <option value="brooklyn">Brooklyn</option>
-            <option value="queens">Queens</option>
-            <option value="bronx">Bronx</option>
-            <option value="statenisland">Staten Island</option>
-            <option value="all">All</option>
+            <option value="manhattan" {% if selected_borough == 'manhattan' %}selected{% endif %}>Manhattan</option>
+            <option value="brooklyn" {% if selected_borough == 'brooklyn' %}selected{% endif %}>Brooklyn</option>
+            <option value="queens" {% if selected_borough == 'queens' %}selected{% endif %}>Queens</option>
+            <option value="bronx" {% if selected_borough == 'bronx' %}selected{% endif %}>Bronx</option>
+            <option value="statenisland" {% if selected_borough == 'statenisland' %}selected{% endif %}>Staten Island</option>
+            <option value="all" {% if selected_borough == 'all' %}selected{% endif %}>All</option>
         </select>
         <button type="submit">Filter</button>
     </form>
 
     <ul>
         {% for restaurant in restaurants %}
+        <p> Filtering by {{selected_borough}} </p>
             {% if restaurant.borough == selected_borough or selected_borough == 'all' %}
                 <li>
                     <strong>{{ restaurant.restaurant_name }}</strong><br>
-                    Address: {{ restaurant.address_line1 }}, {{ restaurant.borough }}, {{ restaurant.zip_code }}<br>
+                    Address: {{ restaurant.address_line1 }}, {{ restaurant.borough }}, {{ restaurant.zip }}<br>
                     Description: {{ restaurant.description }}<br>
                     Cost: {{ restaurant.cost }}<br>
                     Hours:
