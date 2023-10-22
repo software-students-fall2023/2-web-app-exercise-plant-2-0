@@ -45,10 +45,9 @@
                     </li>
                 {% endif %}
             {% endfor %}
-        {% endif %}
-        {% else %}
+        {% elif selected_name != '' %}
             <h2> No Results Found</h2>
-        {% endfor %}
+        {% endif %}
     </ul>
 </body>
 </html>
