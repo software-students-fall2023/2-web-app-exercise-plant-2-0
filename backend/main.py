@@ -16,18 +16,18 @@ def submit_new_restaurant():
     if request.method == 'POST':
         # Retrieve data from the submitted form
         restaurant_name = request.form['restaurant_name']
-        address_line1 = request.form['ad1']
+        address_line1 = request.form['address_line1']
         borough = request.form['borough']
-        zip_code = request.form['zip']
-        description = request.form['desc']
+        zip = request.form['zip']
+        description = request.form['description']
         cost = request.form['cost']
-        sunday_hours = request.form['sundayhours']
-        monday_hours = request.form['mondayhours']
-        tuesday_hours = request.form['tuesdayhours']
-        wednesday_hours = request.form['wednesdayhours']
-        thursday_hours = request.form['thursdayhours']
-        friday_hours = request.form['fridayhours']
-        saturday_hours = request.form['saturdayhours']
+        sunday_hours = request.form['sunday_hours']
+        monday_hours = request.form['monday_hours']
+        tuesday_hours = request.form['tuesday_hours']
+        wednesday_hours = request.form['wednesday_hours']
+        thursday_hours = request.form['thursday_hours']
+        friday_hours = request.form['friday_hours']
+        saturday_hours = request.form['saturday_hours']
         # You can also handle the uploaded file if necessary
 
         # Create a dictionary with the data
@@ -35,7 +35,7 @@ def submit_new_restaurant():
             "restaurant_name": restaurant_name,
             "address_line1": address_line1,
             "borough": borough,
-            "zip_code": zip_code,
+            "zip": zip,
             "description": description,
             "cost": cost,
             "sunday_hours": sunday_hours,
@@ -46,11 +46,12 @@ def submit_new_restaurant():
             "friday_hours": friday_hours,
             "saturday_hours": saturday_hours
         }
-
+        print("**** rest ", restaurant_data)
         # Insert the data into the MongoDB collection
         collection.insert_one(restaurant_data)
         # Redirect to a thank you page or a page of your choice
-        return "Restaurant data submitted successfully."
+        message = "Restaurant data submitted successfully."
+        return render_template('pages/response.html', message=message)
 
 @app.route('/add', methods=['GET'])
 def show_add_restaurant_form():
@@ -59,28 +60,31 @@ def show_add_restaurant_form():
 @app.route('/delete', methods=['GET', 'POST'])
 def delete_restaurant():
     if request.method == 'POST':
-        restaurantID = request.form.get('restaurantID')
+        restaurant_name = request.form.get('restaurant_name')
         adminid = request.form.get('adminid')
         
         # Check if the adminid matches the expected value
         if adminid == "plantmaster":
             # Check if the restaurant exists in the MongoDB collection
-            restaurant = collection.find_one({"restaurant_name": restaurantID})
+            restaurant = collection.find_one({"restaurant_name": restaurant_name})
             if restaurant:
                 # Delete the restaurant document
-                collection.delete_one({"restaurant_name": restaurantID})
-                return "Restaurant deleted successfully."
+                collection.delete_one({"restaurant_name": restaurant_name})
+                message = "Restaurant deleted successfully."
+                return render_template('pages/response.html', message=message)
+
             else:
-                return "Restaurant not found."
+                message = "Restaurant not found. Check submitted restaurant name for typos."
+                return render_template('pages/response.html', message=message)
         else:
-            return "Access denied. Admin code is incorrect."
+            return render_template('pages/response.html', message=message)
 
     return render_template('pages/deleterestaurant.html')
 
 
 @app.route('/edit', methods=['GET', 'POST'])
 def edit_restaurant():
-    error_message = None
+    message = None
 
     if request.method == 'POST':
         # Get the restaurant_name from the form
@@ -88,32 +92,32 @@ def edit_restaurant():
 
         # Check if the restaurant exists
         existing_restaurant = collection.find_one({"restaurant_name": restaurant_name})
-
         if existing_restaurant:
             # Define the updates you want to make based on user input
-            updates = {
-                "address_line1": request.form['ad1'],
-                "borough": request.form['borough'],
-                "zip_code": request.form['zip'],
-                "description": request.form['desc'],
-                "cost": request.form['cost'],
-                "sunday_hours": request.form['sundayhours'],
-                "monday_hours": request.form['mondayhours'],
-                "tuesday_hours": request.form['tuesdayhours'],
-                "wednesday_hours": request.form['wednesdayhours'],
-                "thursday_hours": request.form['thursdayhours'],
-                "friday_hours": request.form['fridayhours'],
-                "saturday_hours": request.form['saturdayhours']
-            }
+            updates = {}
+
+            # Iterate through the fields of existing_restaurant and update the updates dictionary
+            for field in existing_restaurant:
+                form_input = request.form.get(field)
+                if form_input is not None and form_input != "":
+                    updates[field] = form_input
+                else:
+                    updates[field] = existing_restaurant[field]
+
+            # Update new name, if included
+            updates["restaurant_name"] = request.form.get('new_name')
 
             # Update the document in the MongoDB collection
             collection.update_one({"restaurant_name": restaurant_name}, {"$set": updates})
+            message = "Restaurant updated successfully."
+            return render_template('pages/response.html', message=message)
 
-            return "Restaurant updated successfully."
         else:
-            error_message = "Restaurant not found. Please check the restaurant name."
+            message = "Restaurant not found. Please check the restaurant name."
+            return render_template('pages/response.html', message=message)
 
-    return render_template('pages/edit.html', error_message=error_message)
+    return render_template('pages/edit.html')
+
 
 @app.route('/', methods=['GET'])
 def show_all():
@@ -121,22 +125,20 @@ def show_all():
     restaurants = list(collection.find({}))
 
     # Get the selected borough from the form
-    selected_borough = request.args.get('borough', 'all')
+    selected_borough = request.args.get('borough', 'all').lower()
 
     # Render an HTML template to display the list of restaurants
+    print("*** selected ", selected_borough)
     return render_template('pages/home.html', restaurants=restaurants, selected_borough=selected_borough)
 
 @app.route('/search', methods=['GET'])
 def search_restaurants():
     # Get the search term from the form
     selected_name = request.args.get('search', '')
-
     # Define a query to search for restaurants with names matching the selected_name
     query = {"restaurant_name": selected_name}
-    print("**** selected: ", selected_name)
     # Retrieve documents from the MongoDB collection that match the query
     restaurants = list(collection.find(query))
-    print("*****  ", restaurants)
     # Render an HTML template to display the list of restaurants
     return render_template('pages/search.html', restaurants=restaurants, selected_borough='all', selected_name=selected_name)
 
