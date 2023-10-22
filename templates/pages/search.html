@@ -6,11 +6,14 @@
 </head>
 
 <body>
+
     <a href="/"> Home | </a>
     <a href="/add"> Add a Restaurant | </a>
     <a href="/edit"> Edit a Restaurant | </a>
-    <a href="/delete"> Delete a Restaurant (ADMIN) | </a>
-    <a href="/search"> Search for a Restaurant</a>
+    <a href="/filter"> Filter Restaurants |</a>   
+    <a href="/search"> Search a Restaurant</a>
+    <a href="/delete"> Delete a Restaurant (ADMIN) </a>
+
     <h1>Search for Restaurants</h1>
 
     <form method="GET" action="/search">
@@ -43,6 +46,9 @@
                 {% endif %}
             {% endfor %}
         {% endif %}
+        {% else %}
+            <h2> No Results Found</h2>
+        {% endfor %}
     </ul>
 </body>
 </html>
