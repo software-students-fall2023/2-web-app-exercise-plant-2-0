@@ -1,7 +1,7 @@
 import pymongo
 # from bson.objectid import ObjectId
 import datetime
-from flask import Flask, render_template, request, redirect, abort, url_for, make_response
+from flask import Flask, render_template, request, redirect, abort, url_for, make_response, send_from_directory
 
 app = Flask(__name__, template_folder='../templates')
 
@@ -10,6 +10,10 @@ connection = pymongo.MongoClient('mongodb+srv://plant2:plant2@cluster0.ttioiyj.m
 db = connection["project"]
 
 collection = db["restaurants"]
+
+import os
+static_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../static'))
+app = Flask(__name__, template_folder='../templates', static_folder=static_folder)
 
 @app.route('/add', methods=['POST'])
 def submit_new_restaurant():
@@ -147,6 +151,7 @@ def filter():
     selected_borough = request.args.get('borough', 'all').lower()
     selected_cost = request.args.get('cost', 'all')
     return render_template('pages/filter.html', restaurants=restaurants, selected_borough=selected_borough, selected_cost=selected_cost)
+
 
 
 if __name__ == '__main__':

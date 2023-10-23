@@ -32,3 +32,5 @@ and play around with
 /add
 /edit
 /delete
+
+Stylings made from open source bootswatch theme https://bootswatch.com/journal/
