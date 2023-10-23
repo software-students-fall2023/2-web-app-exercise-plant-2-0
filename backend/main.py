@@ -3,9 +3,7 @@ import pymongo
 import datetime
 from flask import Flask, render_template, request, redirect, abort, url_for, make_response
 
-import os
-static_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../static'))
-app = Flask(__name__, template_folder='../templates', static_folder=static_folder)
+app = Flask(__name__, template_folder='../templates')
 
 connection = pymongo.MongoClient('mongodb+srv://plant2:plant2@cluster0.ttioiyj.mongodb.net/')
 
@@ -119,7 +117,6 @@ def edit_restaurant():
             return render_template('pages/response.html', message=message)
 
     return render_template('pages/edit.html')
-
 
 @app.route('/', methods=['GET'])
 def show_all():
