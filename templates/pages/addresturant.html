@@ -8,16 +8,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a Resturant </title>
+    <style>
+        img {
+            width: 100px;
+            border-radius: 0px;
+            float: none;
+            margin-right: 10px;
+        }
+
+        p.class1 {
+            font-weight: none;
+
+        }
+
+        p.class2 {
+            font-weight: bold;
+        }
+
+        .class3 {
+            width: 700px; /* Set the desired width for the input field */
+            font-size: 16px; /* Set the desired font size for the text inside the input field */
+        }
+    </style>
 </head>
 
 <body>
 
     {% include 'pages/navbar.html' %}
 
-    <h1>Add a Resturant</h1>
+    <h1>Add a Restaurant</h1>
     <form action="/add" method="POST">
         <div>
-            <label for="name">Resturant Name:</label>
+            <label for="name">Restaurant Name:</label>
             <input type="text" id="name" name="restaurant_name" placeholder="Pizza place" required>
         </div>
         <br>
