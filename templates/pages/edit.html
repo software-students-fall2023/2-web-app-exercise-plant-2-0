@@ -3,33 +3,12 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">   
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit a Restaurant </title>
-    <style>
-        img {
-            width: 100px;
-            border-radius: 0px;
-            float: none;
-            margin-right: 10px;
-        }
-
-        p.class1 {
-            font-weight: none;
-
-        }
-
-        p.class2 {
-            font-weight: bold;
-        }
-
-        .class3 {
-            width: 700px;
-            /* Set the desired width for the input field */
-            font-size: 16px;
-            /* Set the desired font size for the text inside the input field */
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -38,6 +17,7 @@
 
     <h1>Edit a Restaurant</h1>
 
+    <form>
     <div>
         <label for="name">Name of Restaurant to Edit:</label>
         <input type="text" id="name" name="restaurant_name" required>
@@ -118,7 +98,7 @@
     </div>
     <br>
     <div>
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </div>
     <br>
 

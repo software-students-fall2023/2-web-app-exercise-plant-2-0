@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">   
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">    
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,16 +45,17 @@
         </div>
         <br>
         <div>
-            <button type="submit">Delete Restaurant</button>
+            <button type="submit" class="btn btn-primary">Delete Restaurant</button>
         </div>
         <br>
         <div>
-            <input type="reset">
+            <input type="reset" class="btn btn-secondary">
         </div>
+        <p class="text-primary"> <br>Only admins may delete restaurants. To delete a restaurants, please enter the restaurant name and Admin
+            Code in the forms above.</p>
+            
     </form>
-    <p class="class1">Only admins may delete restaurants. To delete a restaurant, please enter the restaurant name and Admin
-        Code in the forms above.</p>
-        
+   
 </body>
 <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
 
