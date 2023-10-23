@@ -44,8 +44,7 @@
 
     <ul>
         {% for restaurant in restaurants %}
-        <p> Filtering by borough: {{selected_borough}} </p>
-        <p> Filtering by cost: {{selected_cost}} </p>
+        
 
          {% if (restaurant.borough == selected_borough or selected_borough == 'all') and (restaurant.cost == selected_cost or selected_cost == 'all') %}
                 <li>
