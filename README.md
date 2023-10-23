@@ -16,7 +16,7 @@ on Windows:
 `$.venv\Scripts\activate.bat`
 
 Step 3:
-$pip install -r requirements.txt
+`$pip install -r requirements.txt`
 
 Step 4:
 `$cd backend`
@@ -27,12 +27,15 @@ Load up
 http://127.0.0.1:5000/
 
 and play around with 
-/add
-/edit
+/add  
+
+/edit  
+
 /delete
 
 ## Link to Wireframes
-https://www.figma.com/file/4PrZQ2MqCoz7fvquKpLEYb/Plant-2.0-wireframe-for-web-app?type=design&node-id=0-1&mode=design&t=cTqM7tFhXeqcMsTA-0
+https://www.figma.com/file/4PrZQ2MqCoz7fvquKpLEYb/Plant-2.0-wireframe-for-web-app?type=design&node-id=0-1&mode=design&t=cTqM7tFhXeqcMsTA-0  
+
 Due to agile development cycles, the resulting product may vary.
 
 ## Discord channel
@@ -46,9 +49,12 @@ Our web app, SliceNYC, aims to provide a convenient platform featuring beloved p
 https://github.com/software-students-fall2023/2-web-app-exercise-plant-2-0/issues?q=is%3Aissue+is%3Aclosed
 
 ## Link to Task Boards
-Sprint 1: https://github.com/orgs/software-students-fall2023/projects/26/views/1
-Sprint 2: https://github.com/orgs/software-students-fall2023/projects/62
+Sprint 1: https://github.com/orgs/software-students-fall2023/projects/26/views/1  
+
+Sprint 2: https://github.com/orgs/software-students-fall2023/projects/62  
+
 
 ## References
-Stylings made from open source bootswatch theme https://bootswatch.com/journal/
+Stylings made from open source bootswatch theme https://bootswatch.com/journal/  
+
 Website logo designed by Bobby Impastato
