@@ -19,19 +19,22 @@ Step 3:
 `$pip install -r requirements.txt`
 
 Step 4:
-`$cd backend`
+`$cd backend`  
+
 `$python3 main.py`
 
 Step 5:
 Load up 
 http://127.0.0.1:5000/
 
-and play around with 
+and play around with   
+
 /add  
 
 /edit  
 
-/delete
+/delete  
+admin password for delete: plantmaster
 
 ## Link to Wireframes
 https://www.figma.com/file/4PrZQ2MqCoz7fvquKpLEYb/Plant-2.0-wireframe-for-web-app?type=design&node-id=0-1&mode=design&t=cTqM7tFhXeqcMsTA-0  
