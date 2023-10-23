@@ -30,11 +30,15 @@
 </head>
 
 <body>
-    <img src="pizzalogo.png" alt="SliceNYC Logo">
+    <img src="{{ url_for('static', filename='images/pizzalogo.png') }}" alt="SliceNYC Logo" width="100">
     <a href="/"> Home | </a>
     <a href="/add"> Add a Restaurant | </a>
     <a href="/edit"> Edit a Restaurant | </a>
-    <a href="/delete"> Delete a Restaurant (ADMIN) </a>    <h1>Add a Resturant</h1>
+    <a href="/filter"> Filter Restaurants | </a>   
+    <a href="/search"> Search a Restaurant | </a>
+    <a href="/delete"> Delete a Restaurant (ADMIN) </a>
+
+    <h1>Add a Resturant</h1>
     <form action="/add" method="POST">
         <div>
             <label for="name">Resturant Name:</label>

@@ -3,7 +3,9 @@ import pymongo
 import datetime
 from flask import Flask, render_template, request, redirect, abort, url_for, make_response
 
-app = Flask(__name__, template_folder='../templates')
+import os
+static_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '../static'))
+app = Flask(__name__, template_folder='../templates', static_folder=static_folder)
 
 connection = pymongo.MongoClient('mongodb+srv://plant2:plant2@cluster0.ttioiyj.mongodb.net/')
 

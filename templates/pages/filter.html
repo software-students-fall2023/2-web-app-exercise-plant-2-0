@@ -16,15 +16,15 @@
 </head>
 
 <body>
-    <h1>List of Restaurants</h1>
-
-
+    <img src="{{ url_for('static', filename='images/pizzalogo.png') }}" alt="SliceNYC Logo" width="100">
     <a href="/"> Home | </a>
     <a href="/add"> Add a Restaurant | </a>
     <a href="/edit"> Edit a Restaurant | </a>
-    <a href="/filter"> Filter Restaurants |</a>   
-    <a href="/search"> Search a Restaurant</a>
+    <a href="/filter"> Filter Restaurants | </a>   
+    <a href="/search"> Search a Restaurant | </a>
     <a href="/delete"> Delete a Restaurant (ADMIN) </a>
+
+    <h1>List of Restaurants</h1>
 
 
     <form method="GET">
