@@ -2,9 +2,10 @@
 <html>
 
 <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a Resturant </title>
+    <title>Edit a Restaurant </title>
     <style>
         img {
             width: 100px;
@@ -30,15 +31,9 @@
 </head>
 
 <body>
-    <img src="pizzalogo.png" alt="SliceNYC Logo">
-    <h1>Edit a Resturant</h1>
 
-    <a href="/"> Home | </a>
-    <a href="/add"> Add a Restaurant | </a>
-    <a href="/edit"> Edit a Restaurant | </a>
-    <a href="/filter"> Filter Restaurants |</a>   
-    <a href="/search"> Search a Restaurant</a>
-    <a href="/delete"> Delete a Restaurant (ADMIN) </a>
+    {% include 'pages/navbar.html' %}
+    <h1>Edit a Resturant</h1>
 
         <div>
             <label for="name">Name of Restaurant to Edit:</label>
@@ -137,5 +132,6 @@
     </form>
 
 </body>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
 
 </html>

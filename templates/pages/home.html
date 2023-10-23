@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">    <title>List of Restaurants</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">    
+    <title>List of Restaurants</title>
 </head>
 <body>
+    {% include 'pages/navbar.html' %}
+      
     <h1>List of Restaurants</h1>
 
-    <a href="/"> Home | </a>
-    <a href="/add"> Add a Restaurant | </a>
-    <a href="/edit"> Edit a Restaurant | </a>
-    <a href="/filter"> Filter Restaurants |</a>   
-    <a href="/search"> Search a Restaurant</a>
-    <a href="/delete"> Delete a Restaurant (ADMIN) </a>
 
     <!-- <form method="GET" action="/search">
         <label for="search">Search by Restaurant Name:</label>
@@ -56,4 +53,6 @@
         {% endfor %}
     </ul>
 </body>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    
 </html>
