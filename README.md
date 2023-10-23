@@ -20,6 +20,7 @@ Step 3:
 
 Step 4:
 `$cd backend`
+
 `$python3 main.py`
 
 Step 5:
