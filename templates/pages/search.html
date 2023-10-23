@@ -3,7 +3,10 @@
 <head>
     
     <title>Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">   
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">    
+
 
 </head>
 
@@ -15,7 +18,7 @@
     <form method="GET" action="/search">
         <label for="search">Search by Restaurant Name:</label>
         <input type="text" name="search" id="search" placeholder="Enter restaurant name">
-        <button type="submit">Search</button>
+        <button type="submit" class="btn btn-primary">Search</button>
     </form>
 
     <ul>
@@ -23,13 +26,14 @@
         <h2>Results</h2>
             {% for restaurant in restaurants %}
                 {% if restaurant.borough == selected_borough or selected_borough == 'all' %}
-                    <li>
-                        <strong>{{ restaurant.restaurant_name }}</strong><br>
-                        Address: {{ restaurant.address_line1 }}, {{ restaurant.borough }}, {{ restaurant.zip_code }}<br>
-                        Description: {{ restaurant.description }}<br>
+                    
+                <div class="card mb-3">
+                    <div class="card-body">
+                      <h4 class="card-title">{{ restaurant.restaurant_name }}</h4>
+                      <h6 class="card-subtitle mb-2 text-muted"> {{ restaurant.address_line1 }}, {{ restaurant.borough }}, {{ restaurant.zip }}</h6>
+                      <p class="card-text">{{ restaurant.description }}<br>
                         Cost: {{ restaurant.cost }}<br>
-                        Hours:
-                        <ul>
+                        Hours:<ul>
                             <li>Sunday: {{ restaurant.sunday_hours }}</li>
                             <li>Monday: {{ restaurant.monday_hours }}</li>
                             <li>Tuesday: {{ restaurant.tuesday_hours }}</li>
@@ -37,8 +41,10 @@
                             <li>Thursday: {{ restaurant.thursday_hours }}</li>
                             <li>Friday: {{ restaurant.friday_hours }}</li>
                             <li>Saturday: {{ restaurant.saturday_hours }}</li>
-                        </ul>
-                    </li>
+                        </ul></p>
+                      
+                    </div>
+                    
                 {% endif %}
             {% endfor %}
         {% elif selected_name != '' %}

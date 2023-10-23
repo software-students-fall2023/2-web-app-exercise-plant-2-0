@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">   
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,31 +40,38 @@
             <option value="medium">Medium</option> 
             <option value="high">High</option> 
         </select>
-        <button type="submit">Filter</button>
+        <button type="submit" class="btn btn-primary">Filter</button>
     </form>
 
+    
     <ul>
-        {% for restaurant in restaurants %}
         <p> Filtering by borough: {{selected_borough}} </p>
         <p> Filtering by cost: {{selected_cost}} </p>
 
+        {% for restaurant in restaurants %}
+
          {% if (restaurant.borough == selected_borough or selected_borough == 'all') and (restaurant.cost == selected_cost or selected_cost == 'all') %}
-                <li>
-                    <strong>{{ restaurant.restaurant_name }}</strong><br>
-                    Address: {{ restaurant.address_line1 }}, {{ restaurant.borough }}, {{ restaurant.zip }}<br>
-                    Description: {{ restaurant.description }}<br>
-                    Cost: {{ restaurant.cost }}<br>
-                    Hours:
-                    <ul>
-                        <li>Sunday: {{ restaurant.sunday_hours }}</li>
-                        <li>Monday: {{ restaurant.monday_hours }}</li>
-                        <li>Tuesday: {{ restaurant.tuesday_hours }}</li>
-                        <li>Wednesday: {{ restaurant.wednesday_hours }}</li>
-                        <li>Thursday: {{ restaurant.thursday_hours }}</li>
-                        <li>Friday: {{ restaurant.friday_hours }}</li>
-                        <li>Saturday: {{ restaurant.saturday_hours }}</li>
-                    </ul>
-                </li>
+
+                                
+                <div class="card mb-3">
+                    <div class="card-body">
+                      <h4 class="card-title">{{ restaurant.restaurant_name }}</h4>
+                      <h6 class="card-subtitle mb-2 text-muted"> {{ restaurant.address_line1 }}, {{ restaurant.borough }}, {{ restaurant.zip }}</h6>
+                      <p class="card-text">{{ restaurant.description }}<br>
+                        Cost: {{ restaurant.cost }}<br>
+                        Hours:<ul>
+                            <li>Sunday: {{ restaurant.sunday_hours }}</li>
+                            <li>Monday: {{ restaurant.monday_hours }}</li>
+                            <li>Tuesday: {{ restaurant.tuesday_hours }}</li>
+                            <li>Wednesday: {{ restaurant.wednesday_hours }}</li>
+                            <li>Thursday: {{ restaurant.thursday_hours }}</li>
+                            <li>Friday: {{ restaurant.friday_hours }}</li>
+                            <li>Saturday: {{ restaurant.saturday_hours }}</li>
+                        </ul></p>
+                      
+                    </div>
+                </div>
+
             {% endif %}
         {% endfor %}
     </ul>
