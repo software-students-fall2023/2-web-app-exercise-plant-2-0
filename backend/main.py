@@ -122,7 +122,6 @@ def edit_restaurant():
 
     return render_template('pages/edit.html')
 
-
 @app.route('/', methods=['GET'])
 def show_all():
     # Retrieve all documents from the MongoDB collection

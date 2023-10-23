@@ -24,8 +24,10 @@
         }
 
         .class3 {
-            width: 700px; /* Set the desired width for the input field */
-            font-size: 16px; /* Set the desired font size for the text inside the input field */
+            width: 700px;
+            /* Set the desired width for the input field */
+            font-size: 16px;
+            /* Set the desired font size for the text inside the input field */
         }
     </style>
 </head>
@@ -33,102 +35,94 @@
 <body>
 
     {% include 'pages/navbar.html' %}
+
     <h1>Edit a Resturant</h1>
 
-        <div>
-            <label for="name">Name of Restaurant to Edit:</label>
-            <input type="text" id="name" name="restaurant_name" required>
-        </div>
-        <br>
-        <div>
-            <label for="new_restaurant_name">Edit Restaurant Name:</label>
-            <input type="text" id="new_name" name="new_name">
-        </div>
-        <div>
-            <label for="address_line1">Edit Address Line 1:</label>
-            <input type="text" id="address_line1" name="address_line1">
-        </div>
-        <br>
-        <label for="borough">Edit borough:</label> 
-    <select name="borough" id="borough"> 
-        <option value="manhattan">Manhattan</option> 
-        <option value="brooklyn">Brooklyn</option> 
-        <option value="queens">Queens</option> 
+    <div>
+        <label for="name">Name of Restaurant to Edit:</label>
+        <input type="text" id="name" name="restaurant_name" required>
+    </div>
+    <br>
+    <div>
+        <label for="new_restaurant_name">Edit Restaurant Name:</label>
+        <input type="text" id="new_name" name="new_name">
+    </div>
+    <div>
+        <label for="address_line1">Edit Address Line 1:</label>
+        <input type="text" id="address_line1" name="address_line1">
+    </div>
+    <br>
+    <label for="borough">Edit borough:</label>
+    <select name="borough" id="borough">
+        <option value="manhattan">Manhattan</option>
+        <option value="brooklyn">Brooklyn</option>
+        <option value="queens">Queens</option>
         <option value="bronx">Bronx</option>
-        <option value="statenisland">Staten Island</option> 
+        <option value="statenisland">Staten Island</option>
     </select>
-        <br>
-        <br>
-        <div>
-            <label for="zip">Edit ZIP Code:</label>
-            <input type="text" id="zip" name="zip" placeholder="12533">
-        </div>
+    <br>
+    <br>
+    <div>
+        <label for="zip">Edit ZIP Code:</label>
+        <input type="text" id="zip" name="zip" placeholder="12533">
+    </div>
 
-        <br>
-        <br>
-        <div>
-            <label for="description">Edit Resturant Description:</label>
-            <input class="class3" type="text" id="description" name="description" placeholder="THIS IS WHAT I'M EDITING">
-        </div>
-        <br>
-        <label for="cost">Edit Cost:</label>
-        <select name="cost" id="cost"> 
-            <option value="low">$</option> 
-            <option value="medium">$$</option> 
-            <option value="high">$$$</option>
-        </select>
-        <br>
-        <br>
-        <div>
-            <label for="sunday_hours">Edit Sunday Hours:</label>
-            <input type="text" id="sunday_hours" name="sunday_hours" placeholder="9:00AM-5:00PM">
-        </div>
-        <br>
-        <div>
-            <label for="monday_hours">Edit Monday Hours:</label>
-            <input type="text" id="monday_hours" name="monday_hours" placeholder="9:00AM-5:00PM">
-        </div>
-        <br>
-        <div>
-            <label for="tuesday_hours">Edit Tuesday Hours:</label>
-            <input type="text" id="tuesday_hours" name="tuesday_hours" placeholder="9:00AM-5:00PM">
-        </div>
-        <br>
-        <div>
-            <label for="wednesday_hours">Edit Wednesday Hours:</label>
-            <input type="text" id="wednesday_hours" name="wednesday_hours" placeholder="9:00AM-5:00PM">
-        </div>
-        <br>
-        <div>
-            <label for="thursday_hours">Edit Thursday Hours:</label>
-            <input type="text" id="thursday_hours" name="thursday_hours" placeholder="9:00AM-5:00PM">
-        </div>
-        <br>
-        <div>
-            <label for="friday_hours">Edit Friday Hours:</label>
-            <input type="text" id="friday_hours" name="friday_hours" placeholder="9:00AM-5:00PM">
-        </div>
-        <br>
-        <div>
-            <label for="saturday_hours">Edit Saturday Hours:</label>
-            <input type="text" id="saturday_hours" name="saturday_hours" placeholder="9:00AM-5:00PM">
-        </div>
-        <br>
+    <br>
+    <br>
+    <div>
+        <label for="description">Edit Resturant Description:</label>
+        <input class="class3" type="text" id="description" name="description" placeholder="THIS IS WHAT I'M EDITING">
+    </div>
+    <br>
+    <label for="cost">Edit Cost:</label>
+    <select name="cost" id="cost">
+        <option value="low">$</option>
+        <option value="medium">$$</option>
+        <option value="high">$$$</option>
+    </select>
+    <br>
+    <br>
+    <div>
+        <label for="sunday_hours">Edit Sunday Hours:</label>
+        <input type="text" id="sunday_hours" name="sunday_hours" placeholder="9:00AM-5:00PM">
+    </div>
+    <br>
+    <div>
+        <label for="monday_hours">Edit Monday Hours:</label>
+        <input type="text" id="monday_hours" name="monday_hours" placeholder="9:00AM-5:00PM">
+    </div>
+    <br>
+    <div>
+        <label for="tuesday_hours">Edit Tuesday Hours:</label>
+        <input type="text" id="tuesday_hours" name="tuesday_hours" placeholder="9:00AM-5:00PM">
+    </div>
+    <br>
+    <div>
+        <label for="wednesday_hours">Edit Wednesday Hours:</label>
+        <input type="text" id="wednesday_hours" name="wednesday_hours" placeholder="9:00AM-5:00PM">
+    </div>
+    <br>
+    <div>
+        <label for="thursday_hours">Edit Thursday Hours:</label>
+        <input type="text" id="thursday_hours" name="thursday_hours" placeholder="9:00AM-5:00PM">
+    </div>
+    <br>
+    <div>
+        <label for="friday_hours">Edit Friday Hours:</label>
+        <input type="text" id="friday_hours" name="friday_hours" placeholder="9:00AM-5:00PM">
+    </div>
+    <br>
+    <div>
+        <label for="saturday_hours">Edit Saturday Hours:</label>
+        <input type="text" id="saturday_hours" name="saturday_hours" placeholder="9:00AM-5:00PM">
+    </div>
+    <br>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+    <br>
 
-        <div>
-            <br>
-                <label for="file">Photo:</label>
-                <input type="file" id="myFile" name="filename">
-            </div>
 
-        <br>
-        <br>
-        <div>
-            <button type="submit">Submit</button>
-        </div>
-        <br>
-            
-        
     </form>
 
 </body>
